@@ -4,13 +4,13 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
-const errorModal = document.querySelector('#modal');
+const modal = document.querySelector('#modal');
 const modalMessage = document.querySelector('#modal-message');
 const likeButtons = document.querySelectorAll('.like-glyph');
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  document.querySelector("#modal").classList.add("hidden");
+  modal.classList.add("hidden");
 
   const likeButtons = document.querySelectorAll(".like-glyph");
   for (let button of likeButtons) {
@@ -26,10 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         })
         .catch(error => {
-          document.querySelector("#modal-message").innerHTML = error;
-          document.querySelector("#modal").classList.remove("hidden");
+          modalMessage.innerHTML = error;
+          modal.classList.remove("hidden");
           setTimeout(() => {
-            document.querySelector("#modal").classList.add("hidden");
+            modal.classList.add("hidden");
           }, 3000);
         });
     });
